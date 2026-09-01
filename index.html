@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何皓天 · 个人作品集</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+/* ============================================================
+   设计 Token：简约专业 · 白色为主 · 暖色点缀
+   ============================================================ */
+:root{
+  --bg: #FFFFFF;
+  --bg-soft: #FBF7F2;          /* 极浅暖白 */
+  --bg-card: #FFFFFF;
+  --ink: #2B2723;              /* 主文字：暖黑 */
+  --ink-2: #5C564E;            /* 次级文字 */
+  --ink-3: #8A837A;            /* 弱文字 */
+  --line: #E9E2D8;             /* 分隔线：暖灰 */
+  --accent: #C4703E;           /* 暖色主强调：陶土橙 */
+  --accent-deep: #A0552A;      /* 强调深色 */
+  --accent-soft: #F7E9DC;      /* 强调浅底 */
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(120,90,60,.08);
+  --maxw: 1120px;
+  --font-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+
+/* ============================================================
+   顶部导航
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:68px;
+}
+.brand{
+  font-family:var(--font-display);
+  font-weight:700;font-size:17px;letter-spacing:2px;
+  display:flex;align-items:center;gap:10px;
+}
+.brand .avatar{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--accent-soft);border:1.5px solid var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--accent-deep);
+}
+.brand .bt{display:flex;flex-direction:column;line-height:1.15;}
+.brand .bt b{font-size:15px;letter-spacing:1px;}
+.brand .bt span{font-size:9.5px;letter-spacing:2.5px;color:var(--accent);font-weight:600;}
+.nav-links{display:flex;gap:2px;}
+.nav-links a{
+  padding:8px 14px;border-radius:999px;
+  font-size:14px;color:var(--ink-2);
+  transition:all .2s ease;
+}
+.nav-links a:hover{color:var(--accent);background:var(--accent-soft);}
+.nav-links a.active{color:#fff;background:var(--accent);font-weight:500;}
+
+/* ============================================================
+   视图容器（多页面 hash 路由）
+   ============================================================ */
+.view{display:none;}
+.view.active{display:block;animation:fadeIn .4s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+/* ============================================================
+   通用章节
+   ============================================================ */
+.section{max-width:var(--maxw);margin:0 auto;padding:110px 28px 40px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:3px;color:var(--accent);
+  font-weight:600;text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);}
+.page-title{
+  font-family:var(--font-display);
+  font-size:40px;font-weight:700;margin:14px 0 8px;
+  letter-spacing:1px;
+}
+.page-sub{color:var(--ink-2);max-width:680px;font-size:16px;}
+
+/* ============================================================
+   首页 Hero（左文右图）
+   ============================================================ */
+.hero{
+  max-width:var(--maxw);margin:0 auto;
+  padding:150px 28px 70px;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:52px;align-items:center;
+}
+.hero .hello{
+  font-family:var(--font-display);font-size:15px;letter-spacing:4px;
+  color:var(--accent);font-weight:700;margin-bottom:18px;
+}
+.hero .name{
+  font-family:var(--font-display);
+  font-size:58px;font-weight:900;letter-spacing:3px;line-height:1.15;
+}
+.hero .name em{font-style:normal;color:var(--accent);}
+.hero .role{
+  margin:16px 0 8px;font-size:20px;font-weight:500;color:var(--ink);
+}
+.hero .belief{
+  font-size:13.5px;letter-spacing:1.5px;color:var(--ink-3);
+  margin-bottom:14px;
+}
+.hero .sub{
+  color:var(--ink-2);font-size:15.5px;max-width:520px;
+}
+.hero-tags{
+  display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px;
+}
+.hero-tags span{
+  padding:7px 15px;border-radius:999px;font-size:13px;
+  background:var(--accent-soft);color:var(--accent-deep);
+  border:1px solid rgba(192,112,62,.22);
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:999px;font-size:15px;font-weight:500;
+  transition:all .2s ease;cursor:pointer;border:none;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.hero-visual{position:relative;}
+.hero-visual img{
+  width:100%;border-radius:var(--radius);
+  box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;
+}
+.hero-badge{
+  position:absolute;right:-10px;bottom:22px;
+  background:var(--accent);color:#fff;
+  padding:12px 18px;border-radius:14px;
+  box-shadow:var(--shadow);
+}
+.hero-badge .b1{font-size:10px;letter-spacing:2px;opacity:.85;}
+.hero-badge .b2{font-family:var(--font-display);font-size:14px;font-weight:700;}
+.hero-scroll{
+  margin-top:34px;display:inline-flex;align-items:center;gap:8px;
+  font-size:13.5px;color:var(--ink-3);
+}
+.hero-scroll svg{animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+
+/* 首页板块导航 */
+.home-nav{
+  max-width:var(--maxw);margin:0 auto;padding:20px 28px 96px;
+}
+.home-nav .hn-title{
+  font-family:var(--font-display);font-size:26px;font-weight:700;
+  margin-bottom:8px;
+}
+.home-nav .lead{color:var(--ink-2);margin-bottom:30px;}
+.nav-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.nav-card{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px 26px;
+  transition:all .25s ease;
+}
+.nav-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(192,112,62,.4);}
+.nav-card .idx{
+  font-family:var(--font-display);font-size:13px;color:var(--accent);
+  letter-spacing:2px;font-weight:700;
+}
+.nav-card h4{font-family:var(--font-display);font-size:20px;margin:10px 0 8px;}
+.nav-card p{font-size:14px;color:var(--ink-2);}
+.nav-card .go{
+  display:inline-block;margin-top:16px;font-size:13.5px;color:var(--accent);
+  font-weight:500;
+}
+.nav-card .go::after{content:" →";}
+
+/* ============================================================
+   教育背景：学校卡片
+   ============================================================ */
+.school-grid{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.school-card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg-card);transition:all .25s ease;
+}
+.school-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.school-card .bd{padding:24px 26px 26px;}
+.school-card .degree{
+  display:inline-block;font-size:12px;color:var(--accent-deep);
+  background:var(--accent-soft);padding:3px 12px;border-radius:999px;
+  font-weight:600;margin-bottom:10px;
+}
+.school-card .dur{font-size:13.5px;color:var(--ink-3);}
+.school-card h4{font-family:var(--font-display);font-size:20px;margin:6px 0 4px;}
+.school-card .major{font-size:14.5px;color:var(--ink-2);margin-bottom:10px;}
+.school-card ul{list-style:none;}
+.school-card li{
+  position:relative;padding-left:16px;font-size:13.8px;color:var(--ink-2);
+  margin-bottom:5px;
+}
+.school-card li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7;}
+
+/* 教育：学生工作 / 课程 标签块（上下排布） */
+.edu-blocks{margin-top:56px;display:grid;grid-template-columns:1fr;gap:26px;}
+.edu-block{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px;background:var(--bg-card);
+}
+.edu-block h4{
+  font-family:var(--font-display);font-size:18px;margin-bottom:16px;
+  display:flex;align-items:center;gap:9px;
+}
+.edu-block h4 .tag{
+  font-family:var(--font-body);font-size:11px;background:var(--accent);
+  color:#fff;padding:1px 9px;border-radius:999px;letter-spacing:1px;
+}
+.skill-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.skill-tags span{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:12px;font-size:14px;
+  background:var(--bg-soft);border:1px solid var(--line);
+  transition:all .2s ease;
+}
+.skill-tags span svg{flex:none;color:var(--accent);}
+.skill-tags span:hover{border-color:var(--accent);color:var(--accent-deep);background:var(--accent-soft);}
+
+/* 课程群 */
+.course-group{margin-top:18px;}
+.course-group:first-child{margin-top:0;}
+.course-group .cg-title{
+  font-size:13px;letter-spacing:2px;color:var(--accent-deep);
+  font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.course-group .cg-title::after{content:"";flex:1;height:1px;background:var(--line);}
+.course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.course{
+  display:flex;justify-content:space-between;align-items:center;
+  border:1px solid var(--line);border-radius:12px;padding:10px 16px;
+  background:var(--bg-soft);
+}
+.course .cn{font-size:13.5px;color:var(--ink-2);}
+.course .cs{font-family:var(--font-display);font-size:17px;font-weight:900;color:var(--accent);}
+
+/* ============================================================
+   时间线通用（实习）—— 大号数字序号
+   ============================================================ */
+.seq{margin-top:44px;}
+.seq-item{
+  display:grid;grid-template-columns:92px 1fr;
+  gap:26px;padding:30px 0;
+  border-bottom:1px solid var(--line);
+}
+.seq-item:last-child{border-bottom:none;}
+.seq-num{
+  font-family:var(--font-display);
+  font-size:56px;font-weight:900;color:var(--accent-soft);
+  line-height:1;padding-top:2px;
+  -webkit-text-stroke:1.5px rgba(192,112,62,.45);
+}
+.seq-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.seq-head .org{font-family:var(--font-display);font-size:21px;font-weight:700;}
+.seq-head .date{
+  font-size:13px;color:var(--accent);font-weight:500;
+  background:var(--accent-soft);padding:3px 12px;border-radius:999px;
+}
+.seq-role{font-size:15px;font-weight:500;color:var(--accent-deep);margin:4px 0 8px;}
+.seq-tags{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 12px;}
+.seq-tags span{
+  font-size:12px;color:var(--accent-deep);background:var(--accent-soft);
+  border:1px solid rgba(192,112,62,.22);padding:2px 12px;border-radius:999px;
+}
+.seq-card ul{list-style:none;}
+.seq-card li{
+  position:relative;padding-left:18px;margin-bottom:9px;
+  font-size:14.8px;color:var(--ink-2);
+}
+.seq-card li:last-child{margin-bottom:0;}
+.seq-card li::before{
+  content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;
+  border-radius:50%;background:var(--accent);opacity:.65;
+}
+.seq-card li b{color:var(--ink);font-weight:600;}
+
+/* ============================================================
+   项目展示 —— 内容 + 图片
+   ============================================================ */
+.proj-item{
+  display:grid;grid-template-columns:1fr 360px;
+  gap:30px;padding:34px 0;
+  border-bottom:1px solid var(--line);align-items:start;
+}
+.proj-item:last-child{border-bottom:none;}
+.proj-main .p-num{
+  font-family:var(--font-display);
+  font-size:30px;font-weight:900;color:var(--accent-soft);
+  -webkit-text-stroke:1.5px rgba(192,112,62,.45);line-height:1;
+  margin-bottom:12px;
+}
+.proj-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.proj-head .org{font-family:var(--font-display);font-size:20px;font-weight:700;line-height:1.4;}
+.proj-head .date{
+  font-size:13px;color:var(--accent);font-weight:500;
+  background:var(--accent-soft);padding:3px 12px;border-radius:999px;flex:none;
+}
+.proj-role{font-size:15px;font-weight:500;color:var(--accent-deep);margin:6px 0 8px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 12px;}
+.proj-tags span{
+  font-size:12px;color:var(--accent-deep);background:var(--accent-soft);
+  border:1px solid rgba(192,112,62,.22);padding:2px 12px;border-radius:999px;
+}
+.proj-card ul{list-style:none;}
+.proj-card li{
+  position:relative;padding-left:18px;margin-bottom:9px;
+  font-size:14.8px;color:var(--ink-2);
+}
+.proj-card li:last-child{margin-bottom:0;}
+.proj-card li::before{
+  content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;
+  border-radius:50%;background:var(--accent);opacity:.65;
+}
+.proj-card li b{color:var(--ink);font-weight:600;}
+.proj-media{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.proj-media img{
+  width:100%;height:168px;object-fit:cover;
+  border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow);
+}
+
+/* ============================================================
+   技能特长
+   ============================================================ */
+.skills-wrap{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.skill-block{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px;background:var(--bg-card);
+}
+.skill-block h4{
+  font-family:var(--font-display);font-size:18px;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.skill-block h4 .ico{color:var(--accent);}
+.skill-list li{
+  list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);
+  display:flex;justify-content:space-between;gap:14px;font-size:14.8px;
+}
+.skill-list li:last-child{border-bottom:none;}
+.skill-list .lvl{color:var(--accent);font-weight:500;flex:none;}
+
+/* 奖项 */
+.awards{margin-top:60px;}
+.awards h3{
+  font-family:var(--font-display);font-size:24px;font-weight:700;margin-bottom:22px;
+}
+.award-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.award{
+  display:flex;align-items:center;gap:12px;
+  border:1px solid var(--line);border-radius:14px;padding:15px 20px;
+  background:var(--bg-soft);transition:all .2s ease;
+}
+.award:hover{border-color:var(--accent);transform:translateY(-2px);}
+.award .ic{color:var(--accent);flex:none;display:flex;}
+.award .t{font-size:14.5px;font-weight:500;flex:1;}
+.award .d{font-size:13px;color:var(--ink-3);flex:none;}
+
+/* ============================================================
+   兴趣爱好 —— 横向可拖动照片墙
+   ============================================================ */
+.hobby-stack{margin-top:44px;display:grid;gap:40px;}
+.hobby-block{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px 22px;background:var(--bg-card);
+}
+.hb-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+.hb-head .ic{
+  width:52px;height:52px;border-radius:14px;flex:none;
+  background:var(--accent-soft);color:var(--accent-deep);
+  display:flex;align-items:center;justify-content:center;
+}
+.hb-head h4{font-family:var(--font-display);font-size:21px;}
+.hb-head p{font-size:14px;color:var(--ink-2);margin-top:2px;}
+.hscroll{
+  display:flex;gap:14px;overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:4px 2px 12px;
+  cursor:grab;
+  scrollbar-width:thin;
+  scrollbar-color:var(--accent-soft) transparent;
+}
+.hscroll::-webkit-scrollbar{height:6px;}
+.hscroll::-webkit-scrollbar-thumb{background:var(--accent-soft);border-radius:99px;}
+.hscroll::-webkit-scrollbar-track{background:transparent;}
+.hscroll.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none;}
+.hs-item{
+  flex:0 0 auto;width:300px;
+  scroll-snap-align:start;
+  border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);
+}
+.hs-item img{
+  width:100%;height:210px;object-fit:cover;
+  pointer-events:none;user-select:none;-webkit-user-drag:none;
+}
+
+/* ============================================================
+   页脚
+   ============================================================ */
+.footer{
+  border-top:1px solid var(--line);margin-top:60px;
+  background:var(--bg-soft);
+}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;padding:34px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:14px;
+}
+.footer .contact{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);}
+.footer .contact a:hover{color:var(--accent);}
+.footer .copy{font-size:13px;color:var(--ink-3);}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr;padding-top:130px;gap:32px;}
+  .hero .name{font-size:44px;}
+  .nav-cards{grid-template-columns:1fr 1fr;}
+  .school-grid{grid-template-columns:1fr;}
+  .edu-blocks{grid-template-columns:1fr;}
+  .skills-wrap{grid-template-columns:1fr;}
+  .award-grid{grid-template-columns:1fr;}
+  .hobby-stack{grid-template-columns:1fr;}
+  .seq-item{grid-template-columns:60px 1fr;gap:16px;}
+  .seq-num{font-size:40px;}
+  .proj-item{grid-template-columns:1fr;gap:18px;}
+  .proj-media img{height:200px;}
+  .course-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 560px){
+  .section{padding:95px 18px 30px;}
+  .hero{padding:120px 18px 40px;}
+  .nav-inner{padding:0 16px;}
+  .nav-links{display:none;}
+  .nav-cards{grid-template-columns:1fr;}
+  .hero .name{font-size:36px;}
+  .page-title{font-size:32px;}
+  .course-grid{grid-template-columns:1fr;}
+  .proj-media{grid-template-columns:1fr;}
+  .proj-media img{height:auto;max-height:260px;}
+  .hs-item{width:240px;}
+  .hs-item img{height:170px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand" data-nav="home">
+      <span class="avatar">何</span>
+      <span class="bt"><b>何皓天</b><span>PORTFOLIO</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-nav="home">首页</a>
+      <a href="#education" data-nav="education">教育背景</a>
+      <a href="#internship" data-nav="internship">实习经历</a>
+      <a href="#projects" data-nav="projects">项目展示</a>
+      <a href="#skills" data-nav="skills">技能特长</a>
+      <a href="#interests" data-nav="interests">兴趣爱好</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 视图：首页 ============ -->
+<section class="view active" id="view-home">
+  <div class="hero">
+    <div>
+      <div class="hello">HELLO / 你好</div>
+      <h1 class="name">Hi，我是<em>何皓天</em></h1>
+      <p class="role">新闻传播学硕士 · 全媒体内容创作者</p>
+      <p class="belief">个人理念 · 用真实记录现场，用数据讲好故事</p>
+      <p class="sub">暨南大学传播学硕士（保研录取），本科专业第一，辅修经济学学位。主攻深度调研、数据新闻与政务工作，兼具体制内与媒体多元实战经历。</p>
+      <div class="hero-tags">
+        <span>全媒体采编</span>
+        <span>深度调研</span>
+        <span>政务工作</span>
+        <span>数据新闻</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">查看项目作品</a>
+        <a href="#education" class="btn btn-ghost">了解我的经历</a>
+      </div>
+      <div class="hero-scroll">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        继续下滑，探索更多
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://aka.doubaocdn.com/s/wWw2GuWoeR" alt="何皓天学士服毕业照">
+      <div class="hero-badge">
+        <div class="b1">NOW</div>
+        <div class="b2">暨南大学 · 硕士在读</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-nav">
+    <h3 class="hn-title">五大板块</h3>
+    <p class="lead">从校园到一线，从纸面到镜头，这是我的完整成长记录。</p>
+    <div class="nav-cards">
+      <a href="#education" class="nav-card">
+        <div class="idx">01 / 教育背景</div>
+        <h4>双学位 · 保研硕士</h4>
+        <p>播音与主持艺术 + 经济学双学位，本科主修专业第一，传播学硕士保研录取。</p>
+        <span class="go">进入板块</span>
+      </a>
+      <a href="#internship" class="nav-card">
+        <div class="idx">02 / 实习经历</div>
+        <h4>媒体 × 政务双线</h4>
+        <p>新华社浙江分社全媒体记者、广州市人大机关实习生、嘉兴市秀洲区人社局政务实习生。</p>
+        <span class="go">进入板块</span>
+      </a>
+      <a href="#projects" class="nav-card">
+        <div class="idx">03 / 项目展示</div>
+        <h4>田野 · 数据 · 品牌</h4>
+        <p>国家级优秀大创项目、挑战杯省级奖项，纪录片到公众号全链路创作。</p>
+        <span class="go">进入板块</span>
+      </a>
+      <a href="#skills" class="nav-card">
+        <div class="idx">04 / 技能特长</div>
+        <h4>采写编发 · AI 工具</h4>
+        <p>熟练运用 AI 与内容创作软件，多项专业竞赛与荣誉加身。</p>
+        <span class="go">进入板块</span>
+      </a>
+      <a href="#interests" class="nav-card">
+        <div class="idx">05 / 兴趣爱好</div>
+        <h4>主持 · 篮球 · 摄影</h4>
+        <p>用镜头记录现场，用声音传递表达，让热爱与专业相互滋养。</p>
+        <span class="go">进入板块</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 视图：教育背景 ============ -->
+<section class="view" id="view-education">
+  <div class="section">
+    <div class="eyebrow">EDUCATION</div>
+    <h1 class="page-title">我的学习轨迹</h1>
+    <p class="page-sub">从播音主持到经济学，再到传播学硕士，一路保持热爱与专注，不断拓展认知边界。</p>
+
+    <div class="school-grid">
+      <div class="school-card">
+        <div class="bd">
+          <div class="degree">硕士 · 保研录取</div>
+          <div class="dur">2024.09 — 至今</div>
+          <h4>暨南大学 · 新闻与传播学院</h4>
+          <div class="major">传播学 · 学硕</div>
+          <ul>
+            <li>绩点 4.1 / 5.0，2024、2025 年度优秀党员，获二等奖奖学金</li>
+            <li>担任研究生第二党支部副书记，统筹支部组织建设与党建宣传</li>
+          </ul>
+        </div>
+      </div>
+      <div class="school-card">
+        <div class="bd">
+          <div class="degree">本科 · 双学位</div>
+          <div class="dur">2020.09 — 2024.07</div>
+          <h4>暨南大学 · 新闻与传播学院</h4>
+          <div class="major">播音与主持艺术（主修） + 经济学（辅修）</div>
+          <ul>
+            <li>绩点 4.09 / 5.0，主修专业第一</li>
+            <li>获评本科优异学生、优秀学生、优秀共青团员、优秀学生骨干</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-blocks">
+      <div class="edu-block">
+        <h4><span class="tag">STUDENT WORK</span>学生工作</h4>
+        <div class="skill-tags">
+          <span data-ic="flag">研究生第二党支部副书记</span>
+          <span data-ic="teach">2021、2022 级本科新生助教</span>
+          <span data-ic="book">研究生师门读书会负责人</span>
+          <span data-ic="club">学院文体部成员</span>
+        </div>
+      </div>
+      <div class="edu-block">
+        <h4><span class="tag">COURSES</span>主修课程亮点</h4>
+        <div class="course-group">
+          <div class="cg-title">专业实践</div>
+          <div class="course-grid">
+            <div class="course"><span class="cn">数据挖掘与可视化</span><span class="cs">95</span></div>
+            <div class="course"><span class="cn">电视摄像</span><span class="cs">95</span></div>
+            <div class="course"><span class="cn">口语表达实务</span><span class="cs">96</span></div>
+            <div class="course"><span class="cn">出镜记者现场报道</span><span class="cs">90</span></div>
+          </div>
+        </div>
+        <div class="course-group">
+          <div class="cg-title">理论方法</div>
+          <div class="course-grid">
+            <div class="course"><span class="cn">质化研究方法</span><span class="cs">96</span></div>
+            <div class="course"><span class="cn">量化研究方法</span><span class="cs">96</span></div>
+            <div class="course"><span class="cn">网络与新媒体研究</span><span class="cs">95</span></div>
+            <div class="course"><span class="cn">公共关系学</span><span class="cs">92</span></div>
+          </div>
+        </div>
+        <div class="course-group">
+          <div class="cg-title">经济拓展</div>
+          <div class="course-grid">
+            <div class="course"><span class="cn">经济学</span><span class="cs">96</span></div>
+            <div class="course"><span class="cn">证券投资学</span><span class="cs">96</span></div>
+            <div class="course"><span class="cn">经济研究方法与写作</span><span class="cs">94</span></div>
+            <div class="course"><span class="cn">计量经济学</span><span class="cs">90</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 视图：实习经历 ============ -->
+<section class="view" id="view-internship">
+  <div class="section">
+    <div class="eyebrow">INTERNSHIP</div>
+    <h1 class="page-title">我在过往做过什么</h1>
+    <p class="page-sub">从央媒一线到人大机关，再到基层政务窗口，3 段实习构筑“媒体 + 政务”双线能力。</p>
+
+    <div class="seq">
+      <div class="seq-item">
+        <div class="seq-num">01</div>
+        <div>
+          <div class="seq-head">
+            <span class="org">新华社浙江分社</span>
+            <span class="date">2023/10 – 2024/02</span>
+          </div>
+          <div class="seq-role">政文采访部 · 全媒体记者</div>
+          <div class="seq-tags"><span>深度报道</span><span>全媒体采制</span><span>多语种传播</span></div>
+          <div class="seq-card">
+            <ul>
+              <li><b>政文报道采写：</b>参与浙江省领导参考及舆论监督报道采写，完成第十八届中国戏剧节、浙江金融服务农业农村共同富裕联合体会议、“加强涉外法制建设”浙江论坛等十余场重要活动与会议报道，部分稿件被译为意、日、韩等多语种刊发于海外媒体</li>
+              <li><b>全媒体内容生产：</b>负责新闻通稿的文字修改、校对与排版规范，为“2023 中国文学盛典——茅盾文学周”等活动拍摄并剪辑视频报道，实现图文音视频全链条产出</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="seq-item">
+        <div class="seq-num">02</div>
+        <div>
+          <div class="seq-head">
+            <span class="org">广州市人民代表大会</span>
+            <span class="date">2025/11 – 2026/01</span>
+          </div>
+          <div class="seq-role">人大常委会 · 机关实习生</div>
+          <div class="seq-tags"><span>政务传播</span><span>文字采编</span><span>出版统筹</span></div>
+          <div class="seq-card">
+            <ul>
+              <li><b>履职故事采编：</b>参与《我是人大代表——广州市第十六届人民代表大会代表履职故事选》编纂项目，打磨代表故事稿件，完成事实核对、文字润色与结构优化，统一全书叙事规范</li>
+              <li><b>出版筹备支撑：</b>协助推进书稿编纂全流程，梳理完善代表事迹素材分类体系，配合完成统稿校对、格式规范等出版前准备工作</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="seq-item">
+        <div class="seq-num">03</div>
+        <div>
+          <div class="seq-head">
+            <span class="org">嘉兴市秀洲区人社局</span>
+            <span class="date">2026/07 – 2026/08</span>
+          </div>
+          <div class="seq-role">劳动人事争议仲裁委员会 · 政务实习生</div>
+          <div class="seq-tags"><span>窗口服务</span><span>案卷管理</span><span>程序合规</span></div>
+          <div class="seq-card">
+            <ul>
+              <li><b>仲裁接待服务：</b>负责来访群众接待与咨询引导，协助立案材料初审、仲裁申请受理，累计接待群众 300 余人次，协助处理仲裁申请 200 余件</li>
+              <li><b>案卷审查管理：</b>承担仲裁案卷审查、整理与规范化归档，累计整理归档仲裁案卷 80 余卷，保障案卷管理标准统一</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 视图：项目展示 ============ -->
+<section class="view" id="view-projects">
+  <div class="section">
+    <div class="eyebrow">PROJECTS</div>
+    <h1 class="page-title">我的代表作品</h1>
+    <p class="page-sub">从乡村田野到产业一线，从纪录片到公众号，用作品讲述真实的中国故事。</p>
+
+    <div class="seq">
+      <div class="proj-item">
+        <div class="proj-main">
+          <div class="p-num">01</div>
+          <div class="proj-head">
+            <span class="org">“可见与去边缘化：井冈山神山村乡村振兴实践调查”</span>
+            <span class="date">2022/03 – 2024/03</span>
+          </div>
+          <div class="proj-role">项目负责人</div>
+          <div class="proj-tags"><span>纪录片</span><span>田野调查</span><span>乡村振兴</span></div>
+          <div class="proj-card">
+            <ul>
+              <li><b>内容采制：</b>负责乡村主题纪实内容全链路生产，基于 2 年田野素材打磨小人物叙事，产出纪录片、人物短视频共 4 条，配套 5.5 万字深度调研文稿</li>
+              <li><b>传播获誉：</b>联动官方账号搭建传播矩阵，以“个体故事 + 乡村振兴”策略触达大众，国庆快闪视频获官媒转发；项目获评全国大学生创新创业训练计划<b>国家级优秀项目</b>、广东大中专学生“暑期社会实践活动”省级重点团队</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-media">
+          <img src="https://aka.doubaocdn.com/s/fgMTC8j1Kd" alt="神山村项目海报">
+          <img src="https://aka.doubaocdn.com/s/cJpBgZKNeS" alt="神山村村民活动现场">
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-main">
+          <div class="p-num">02</div>
+          <div class="proj-head">
+            <span class="org">“腾笼换鸟 展翼何方——康鹭制衣产业转型之下从业者的迷惘与抉择”</span>
+            <span class="date">2024/09 – 2025/06</span>
+          </div>
+          <div class="proj-role">核心成员</div>
+          <div class="proj-tags"><span>数据新闻</span><span>深度调研</span><span>产业研究</span></div>
+          <div class="proj-card">
+            <ul>
+              <li><b>产业调研：</b>聚焦制衣产业转型议题，完成 500 余天长线追踪、50 余次实地走访，结合 30+ 从业者深访与 354 份问卷交叉分析，输出完整产业现状研究结论</li>
+              <li><b>专业斩获：</b>项目获 2024 年广东省科技创新战略专项（攀登计划）重点项目、2024“挑战杯”大学生课外学术科技作品竞赛校一等奖</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-media">
+          <img src="https://aka.doubaocdn.com/s/hhw72kHuWn" alt="康鹭制衣产业现场">
+          <img src="https://aka.doubaocdn.com/s/6K42ieS8x3" alt="康鹭街市人流">
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-main">
+          <div class="p-num">03</div>
+          <div class="proj-head">
+            <span class="org">“暨大口传系”公众号</span>
+            <span class="date">2020/10 – 2021/06</span>
+          </div>
+          <div class="proj-role">责任编辑</div>
+          <div class="proj-tags"><span>内容运营</span><span>栏目策划</span><span>排版设计</span></div>
+          <div class="proj-card">
+            <ul>
+              <li><b>全链运维：</b>负责公众号选题策划、稿件撰写、内容审核、排版优化全流程，保障稳定更新，年输出内容 40 余篇</li>
+              <li><b>栏目破局：</b>牵头打造“人物剪影”主持人主题专栏，丰富内容矩阵，板块阅读量高出账号均值 30%，获得院系领导肯定</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-media">
+          <img src="https://aka.doubaocdn.com/s/c0lxNxetds" alt="暨大口传系账号主页">
+          <img src="https://aka.doubaocdn.com/s/LxhBzmsAKf" alt="暨大口传系专栏文章">
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-main">
+          <div class="p-num">04</div>
+          <div class="proj-head">
+            <span class="org">中国（广州）国际纪录片节 · 金红棉影展</span>
+            <span class="date">2020/11 – 2022/01</span>
+          </div>
+          <div class="proj-role">展映志愿者</div>
+          <div class="proj-tags"><span>现场执行</span><span>活动统筹</span><span>嘉宾对接</span></div>
+          <div class="proj-card">
+            <ul>
+              <li><b>现场执行：</b>全程参与第七届、第八届金红棉影展线下工作，覆盖广州、佛山多城点位，牵头负责天汇广场核心展映点全流程保障</li>
+              <li><b>对接保障：</b>对接到场媒体与嘉宾，统筹映后交流环节现场衔接，保障活动有序推进，获评影展“优秀志愿者”</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-media">
+          <img src="https://aka.doubaocdn.com/s/GYr37XlUG6" alt="金红棉影展志愿者合影">
+          <img src="https://aka.doubaocdn.com/s/KOqVyULVQi" alt="金红棉影展现场工作">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 视图：技能特长 ============ -->
+<section class="view" id="view-skills">
+  <div class="section">
+    <div class="eyebrow">SKILLS</div>
+    <h1 class="page-title">技能图谱</h1>
+    <p class="page-sub">从采写编发到数据研究，从内容工具到语言表达，构建全媒体复合能力体系。</p>
+
+    <div class="skills-wrap">
+      <div class="skill-block">
+        <h4><span class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </span>全媒体采编</h4>
+        <div class="skill-tags">
+          <span data-ic="write">新闻采写</span>
+          <span data-ic="report">深度报道</span>
+          <span data-ic="camera">新闻摄影</span>
+          <span data-ic="video">视频剪辑</span>
+          <span data-ic="mic">出镜报道</span>
+          <span data-ic="audio">音频制作</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h4><span class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-7"/></svg>
+        </span>数据与调研</h4>
+        <div class="skill-tags">
+          <span data-ic="chart">数据挖掘与可视化</span>
+          <span data-ic="quant">量化研究方法</span>
+          <span data-ic="qual">质化研究方法</span>
+          <span data-ic="survey">问卷与深度访谈</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h4><span class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+        </span>内容工具与 AI</h4>
+        <div class="skill-tags">
+          <span data-ic="film">剪映（精通）</span>
+          <span data-ic="palette">Canva（精通）</span>
+          <span data-ic="audio">Audition（精通）</span>
+          <span data-ic="ai">Claude</span>
+          <span data-ic="ai">OpenAI</span>
+          <span data-ic="ai">Kimi</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h4><span class="ico">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </span>语言与表达</h4>
+        <div class="skill-tags">
+          <span data-ic="lang">英语（CET-6）</span>
+          <span data-ic="lang">普通话（一级乙等）</span>
+          <span data-ic="express">口语表达</span>
+          <span data-ic="express">活动主持</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards">
+      <h3>所获奖项</h3>
+      <div class="award-grid">
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2022 全国大学生创新创业训练计划国家级优秀项目</span><span class="d">2022/09</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2021“中国与非洲”影像作品大赛二等奖</span><span class="d">2021/10</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2021 广东大中专学生暑期“三下乡”社会实践活动省级重点团队</span><span class="d">2021/09</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2023“挑战杯”首都大学生课外学术科技作品竞赛主体赛道三等奖</span><span class="d">2023/07</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2021 “N视频优秀创作人”</span><span class="d">2021/04</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2021 中国（广州）国际纪录片节金红棉影展优秀志愿者</span><span class="d">2022/01</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2024“挑战杯”大学生课外学术科技作品竞赛校一等奖</span><span class="d">2025/06</span></div>
+        <div class="award"><span class="ic" data-ic-a="trophy"></span><span class="t">2021 暨南大学“荔枝人才奖学金”</span><span class="d">2021/12</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 视图：兴趣爱好 ============ -->
+<section class="view" id="view-interests">
+  <div class="section">
+    <div class="eyebrow">INTERESTS</div>
+    <h1 class="page-title">工作之外的我</h1>
+    <p class="page-sub">保持好奇，热爱生活，用丰富的体验滋养表达与创造。</p>
+
+    <div class="hobby-stack">
+      <div class="hobby-block">
+        <div class="hb-head">
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+          </div>
+          <div>
+            <h4>主持</h4>
+            <p>播音主持科班出身，多次担任大型庆典与活动主持，用语言连接现场与受众。</p>
+          </div>
+        </div>
+        <div class="hscroll" data-hscroll>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/UN5dOlt0jP" alt="何皓天主持特写" draggable="false"></div>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/OAkmo7Vsuo" alt="嘉兴一中120周年校庆主持" draggable="false"></div>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/eovJpoa3AV" alt="校庆庆典宣读贺信" draggable="false"></div>
+        </div>
+      </div>
+
+      <div class="hobby-block">
+        <div class="hb-head">
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M4.9 16.1l1.4-1.4a3 3 0 0 1 4.2 0l.9.9a3 3 0 0 0 4.2 0l1.4-1.4"/><path d="M7 9h.01M17 9h.01"/></svg>
+          </div>
+          <div>
+            <h4>篮球</h4>
+            <p>长期坚持篮球运动，在竞技对抗中磨砺专注力、协作力与抗压能力。</p>
+          </div>
+        </div>
+        <div class="hscroll" data-hscroll>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/RYceWUyUZ0" alt="何皓天球场投篮" draggable="false"></div>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/znEwcUXsDU" alt="何皓天球场对抗" draggable="false"></div>
+        </div>
+      </div>
+
+      <div class="hobby-block">
+        <div class="hb-head">
+          <div class="ic">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <div>
+            <h4>摄影</h4>
+            <p>镜头是第二语言，习惯用影像记录现场与人物，与专业采制能力相互成就。</p>
+          </div>
+        </div>
+        <div class="hscroll" data-hscroll>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/8vxDHK4dp7" alt="摄影作品·油菜花田" draggable="false"></div>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/9F0cX0KNfh" alt="摄影作品·草坪孩童" draggable="false"></div>
+          <div class="hs-item"><img src="https://aka.doubaocdn.com/s/9JYnJTWxEi" alt="摄影作品·雾中海岩" draggable="false"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="contact">
+      <span>浙江 · 嘉兴</span>
+      <a href="tel:15521236809">15521236809</a>
+      <a href="mailto:hhtinitial@foxmail.com">hhtinitial@foxmail.com</a>
+    </div>
+    <div class="copy">© 2026 何皓天 · 个人作品集</div>
+  </div>
+</footer>
+
+<script>
+/* ============ 图标库 ============ */
+var ICONS = {
+  flag: '<path d="M4 21V4a1 1 0 0 1 1-1h12l-2 3 2 3H5"/>',
+  teach: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  book: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  club: '<path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>',
+  write: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  report: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>',
+  camera: '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/>',
+  video: '<path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+  mic: '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+  audio: '<path d="M2 10v4M6 6v12M10 3v18M14 8v8M18 5v14M22 10v4"/>',
+  chart: '<path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-7"/>',
+  quant: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h3"/>',
+  qual: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  survey: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/>',
+  film: '<path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+  palette: '<circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>',
+  ai: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>',
+  lang: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  express: '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>',
+  trophy: '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>'
+};
+
+/* ============ 注入标签图标 ============ */
+document.querySelectorAll('[data-ic]').forEach(function(el){
+  var k = el.getAttribute('data-ic');
+  if(ICONS[k]){
+    el.insertAdjacentHTML('afterbegin', '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[k] + '</svg>');
+  }
+});
+document.querySelectorAll('[data-ic-a]').forEach(function(el){
+  var k = el.getAttribute('data-ic-a');
+  if(ICONS[k]){
+    el.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[k] + '</svg>';
+  }
+});
+
+/* ============ 兴趣爱好横向拖拽滚动 ============ */
+document.querySelectorAll('[data-hscroll]').forEach(function(sc){
+  var down = false, startX = 0, startScroll = 0, moved = 0;
+  sc.addEventListener('pointerdown', function(e){
+    down = true;
+    moved = 0;
+    startX = e.clientX;
+    startScroll = sc.scrollLeft;
+    sc.classList.add('dragging');
+    sc.setPointerCapture(e.pointerId);
+  });
+  sc.addEventListener('pointermove', function(e){
+    if(!down) return;
+    var dx = e.clientX - startX;
+    if(Math.abs(dx) > moved) moved = Math.abs(dx);
+    sc.scrollLeft = startScroll - dx;
+  });
+  function end(){
+    down = false;
+    sc.classList.remove('dragging');
+  }
+  sc.addEventListener('pointerup', end);
+  sc.addEventListener('pointercancel', end);
+});
+
+/* ============ 多页面 hash 路由 ============ */
+(function(){
+  var views = {
+    'home':'view-home',
+    'education':'view-education',
+    'internship':'view-internship',
+    'projects':'view-projects',
+    'skills':'view-skills',
+    'interests':'view-interests'
+  };
+  var names = Object.keys(views);
+
+  function current(){
+    var h = location.hash.replace('#','');
+    return views[h] ? h : 'home';
+  }
+
+  function render(){
+    var key = current();
+    names.forEach(function(k){
+      var v = document.getElementById(views[k]);
+      var l = document.querySelectorAll('.nav-links a[data-nav="'+k+'"]');
+      if(v){ v.classList.toggle('active', k===key); }
+      l.forEach(function(a){ a.classList.toggle('active', k===key); });
+    });
+    window.scrollTo(0,0);
+  }
+
+  window.addEventListener('hashchange', render);
+  render();
+})();
+</script>
+</body>
+</html>
